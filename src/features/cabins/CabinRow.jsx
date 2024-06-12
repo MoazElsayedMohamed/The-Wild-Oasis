@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { formatCurrency } from "../../utils/helper";
+import { formatCurrency } from "../../utils/helpers";
 import { useDeleteCabin } from "./useDeleteCabin";
 import { HiPencil, HiTrash } from "react-icons/hi";
 import { HiSquare2Stack } from "react-icons/hi2";
@@ -70,7 +70,7 @@ function CabinRow({ cabin }) {
       {discount ? (
         <Discount>{formatCurrency(discount)}</Discount>
       ) : (
-        <span>-</span>
+        <span>&mdash;</span>
       )}
       <div>
         <Modal>
