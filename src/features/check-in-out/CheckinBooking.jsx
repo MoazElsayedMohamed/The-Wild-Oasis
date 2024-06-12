@@ -31,7 +31,6 @@ function CheckinBooking() {
   const { booking, isLoading } = useBooking();
   const { settings, isLoading: isLoadingSettings } = useSettings();
   const { checkin, isCheckingIn } = useCheckIn();
-  const { checkout, isCheckingOut } = useCheckOut();
   useEffect(() => {
     setConfirmPaid(booking?.isPaid ?? false);
   }, [booking]);
@@ -115,18 +114,6 @@ function CheckinBooking() {
         <Button onClick={handleCheckin} disabled={!confirmPaid || isCheckingIn}>
           Check in booking #{bookingId}
         </Button>
-
-        {checkin && (
-          <Button
-            icon={<HiArrowUpOnSquare />}
-            onClick={() => {
-              checkout(bookingId);
-            }}
-            disabled={isCheckingOut}
-          >
-            Check out
-          </Button>
-        )}
 
         <Button variation="secondary" onClick={moveBack}>
           Back
